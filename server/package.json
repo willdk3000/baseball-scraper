@@ -1,0 +1,31 @@
+{
+  "name": "team-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon ./bin/www",
+    "start:dev": "concurrently \"nodemon ./bin/www\" \"cd .. && cd client && npm start\"",
+    "start": "node \"./bin/www\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "concurrently": "^4.1.0",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "knex": "^0.15.2",
+    "knex-migrate": "^1.7.0",
+    "morgan": "^1.9.1",
+    "node-fetch": "^2.3.0",
+    "nodemon": "^1.18.7",
+    "pg": "^7.7.1"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "moment": "^2.23.0"
+  }
+}
