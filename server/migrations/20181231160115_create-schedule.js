@@ -11,6 +11,7 @@ exports.up = function (knex, Promise) {
         table.text('opponent_initials');
         table.text('home_away');
         table.text('outcome');
+        table.text('my_odds');
     });
 };
 

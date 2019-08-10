@@ -3,8 +3,6 @@ const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 const controllers = require('./controllers');
 
-
-
 // Delay method - to prevent getting ip banned
 const delay = (milliseconds) => {
   return new Promise((resolve, reject) => {
