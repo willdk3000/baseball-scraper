@@ -1,5 +1,5 @@
 
-exports.up = function(knex, Promise) {
+exports.up = function (knex, Promise) {
     return knex.schema.createTable('schedule', (table) => {
         table.unique('gameno');
         table.integer('gameno');
@@ -9,10 +9,11 @@ exports.up = function(knex, Promise) {
         table.date('date_parsed');
         table.text('opponent_clean');
         table.text('opponent_initials');
-        table.text('home_away')
+        table.text('home_away');
+        table.text('outcome');
     });
 };
 
-exports.down = function(knex, Promise) {
+exports.down = function (knex, Promise) {
     return knex.schema.dropTable('schedule');
 };

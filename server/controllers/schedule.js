@@ -25,7 +25,8 @@ module.exports = {
                 date_parsed, 
                 opponent_clean,
                 opponent_initials,
-                home_away)
+                home_away,
+                outcome)
             SELECT p.*
             FROM schedule_json t
             CROSS JOIN LATERAL json_populate_recordset(null::schedule, doc) as p
@@ -37,7 +38,8 @@ module.exports = {
                 date_parsed = excluded.date_parsed, 
                 opponent_clean = excluded.opponent_clean, 
                 opponent_initials = excluded.opponent_initials,
-                home_away = excluded.home_away`
+                home_away = excluded.home_away,
+                outcome='null'`
         )
             .then(function () {
                 return 'done'

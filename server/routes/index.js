@@ -1,6 +1,7 @@
 const team_battingController = require('../controllers').team_batting;
 const team_pitchingController = require('../controllers').team_pitching;
 const scheduleController = require('../controllers').schedule;
+const scoresController = require('../controllers').scores;
 
 module.exports = (app) => {
 
@@ -12,5 +13,7 @@ module.exports = (app) => {
 
   app.get('/api/schedule', scheduleController.list);
   app.post('/api/schedule/:action', scheduleController.requete);
+
+  app.post('/api/scores', scoresController.list)
 
 };

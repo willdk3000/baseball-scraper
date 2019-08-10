@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "cors": "^2.8.5",
-    "moment": "^2.23.0"
+    "moment": "^2.24.0"
   }
 }
