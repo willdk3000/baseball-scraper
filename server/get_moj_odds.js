@@ -30,27 +30,27 @@ const getOdds = async () => {
 
       var initials = teamoddsformat[0].substring(0, 3).toUpperCase();
 
-      if (teamoddsformat == "New York-M") {
+      if (teamoddsformat[0] == "New York-M") {
         var initials = "NYM"
-      } else if (teamoddsformat == "New York-Y") {
+      } else if (teamoddsformat[0] == "New York-Y") {
         var initials = "NYY"
-      } else if (teamoddsformat == "Chicago-C") {
+      } else if (teamoddsformat[0] == "Chicago-C") {
         var initials = "CHC"
-      } else if (teamoddsformat == "Chicago-W") {
+      } else if (teamoddsformat[0] == "Chicago-W") {
         var initials = "CHW"
-      } else if (teamoddsformat == "San Diego") {
+      } else if (teamoddsformat[0] == "San Diego") {
         var initials = "SDP"
-      } else if (teamoddsformat == "San Francisco") {
+      } else if (teamoddsformat[0] == "San Francisco") {
         var initials = "SFG"
-      } else if (teamoddsformat == "St. Louis") {
+      } else if (teamoddsformat[0] == "St. Louis") {
         var initials = "STL"
-      } else if (teamoddsformat == "Washington") {
+      } else if (teamoddsformat[0] == "Washington") {
         var initials = "WSN"
-      } else if (teamoddsformat == "Los Angeles-A") {
+      } else if (teamoddsformat[0] == "Los Angeles-A") {
         var initials = "LAA"
-      } else if (teamoddsformat == "Los Angeles-D") {
+      } else if (teamoddsformat[0] == "Los Angeles-D") {
         var initials = "LAD"
-      } else if (teamoddsformat == "Kansas City") {
+      } else if (teamoddsformat[0] == "Kansas City") {
         var initials = "KCR"
       }
 
@@ -74,27 +74,27 @@ const getOdds = async () => {
 
     var initials = teamoddsformat[0].substring(0, 3).toUpperCase();
 
-    if (teamoddsformat == "New York-M") {
+    if (teamoddsformat[0] == "New York-M") {
       var initials = "NYM"
-    } else if (teamoddsformat == "New York-Y") {
+    } else if (teamoddsformat[0] == "New York-Y") {
       var initials = "NYY"
-    } else if (teamoddsformat == "Chicago-C") {
+    } else if (teamoddsformat[0] == "Chicago-C") {
       var initials = "CHC"
-    } else if (teamoddsformat == "Chicago-W") {
+    } else if (teamoddsformat[0] == "Chicago-W") {
       var initials = "CHW"
-    } else if (teamoddsformat == "San Diego") {
+    } else if (teamoddsformat[0] == "San Diego") {
       var initials = "SDP"
-    } else if (teamoddsformat == "San Francisco") {
+    } else if (teamoddsformat[0] == "San Francisco") {
       var initials = "SFG"
-    } else if (teamoddsformat == "St. Louis") {
+    } else if (teamoddsformat[0] == "St. Louis") {
       var initials = "STL"
-    } else if (teamoddsformat == "Washington") {
+    } else if (teamoddsformat[0] == "Washington") {
       var initials = "WSN"
-    } else if (teamoddsformat == "Los Angeles-A") {
+    } else if (teamoddsformat[0] == "Los Angeles-A") {
       var initials = "LAA"
-    } else if (teamoddsformat == "Los Angeles-D") {
+    } else if (teamoddsformat[0] == "Los Angeles-D") {
       var initials = "LAD"
-    } else if (teamoddsformat == "Kansas City") {
+    } else if (teamoddsformat[0] == "Kansas City") {
       var initials = "KCR"
     }
 
