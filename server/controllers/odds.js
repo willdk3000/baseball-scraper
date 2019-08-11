@@ -11,7 +11,7 @@ module.exports = {
 
     return knex.raw(
       `UPDATE schedule
-        SET my_odds= '${req.odds}'
+        SET my_odds= '${req.odds}', my_outcome='${req.outcome}'
         WHERE date_parsed='${dateFormat}' AND team='${req.team}'
       `
     )

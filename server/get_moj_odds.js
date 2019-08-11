@@ -106,13 +106,14 @@ const getOdds = async () => {
   })
   
   // Eval outcome
-  for (i=0; i<=(mojOdds.length/2); i++) {
-    if (mojOdds[i].odds > mojOdds[i+(mojOdds.length/2)-1].odds) {
+  for (i=0; i<=(mojOdds.length/2)-1; i++) {
+    console.log(mojOdds[i], mojOdds[(mojOdds.length/2)+i])
+    if (mojOdds[i].odds > mojOdds[(mojOdds.length/2)+i].odds) {
       mojOdds[i].outcome='win';
-      mojOdds[i+(mojOdds.length/2)-1].outcome='loss'
+      mojOdds[(mojOdds.length/2)+i].outcome='loss'
     } else {
       mojOdds[i].outcome='loss';
-      mojOdds[i+(mojOdds.length/2)-1].outcome='win'
+      mojOdds[(mojOdds.length/2)+i].outcome='win'
     }
   }
 

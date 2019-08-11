@@ -44,12 +44,14 @@ games.forEach((game)=>{
 	}
 
 	localOdds.push({
-		'team':game.team,
-		'odds':odds_outcome_team
+		'team': game.team,
+		'odds': odds_team,
+		'outcome': odds_outcome_team
 	},
 	{
-		'team':game.opponent_initials,
-		'odds':odds_outcome_opponent
+		'team': game.opponent_initials,
+		'odds': odds_opponent,
+		'outcome': odds_outcome_opponent
 	})
 	
 })
