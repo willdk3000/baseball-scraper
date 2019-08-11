@@ -36,13 +36,13 @@ const getOdds = async () => {
         var initials = "NYY"
       } else if (teamoddsformat[0] == "Chicago-C") {
         var initials = "CHC"
-      } else if (teamoddsformat[0] == "Chicago-W") {
+      } else if (teamoddsformat[0] == "Chicago-WS") {
         var initials = "CHW"
       } else if (teamoddsformat[0] == "San Diego") {
         var initials = "SDP"
       } else if (teamoddsformat[0] == "San Francisco") {
         var initials = "SFG"
-      } else if (teamoddsformat[0] == "St. Louis") {
+      } else if (teamoddsformat[0] == "Saint Louis") {
         var initials = "STL"
       } else if (teamoddsformat[0] == "Washington") {
         var initials = "WSN"
@@ -80,13 +80,13 @@ const getOdds = async () => {
       var initials = "NYY"
     } else if (teamoddsformat[0] == "Chicago-C") {
       var initials = "CHC"
-    } else if (teamoddsformat[0] == "Chicago-W") {
+    } else if (teamoddsformat[0] == "Chicago-WS") {
       var initials = "CHW"
     } else if (teamoddsformat[0] == "San Diego") {
       var initials = "SDP"
     } else if (teamoddsformat[0] == "San Francisco") {
       var initials = "SFG"
-    } else if (teamoddsformat[0] == "St. Louis") {
+    } else if (teamoddsformat[0] == "Saint Louis") {
       var initials = "STL"
     } else if (teamoddsformat[0] == "Washington") {
       var initials = "WSN"
