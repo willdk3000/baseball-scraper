@@ -107,8 +107,8 @@ const getOdds = async () => {
   
   // Eval outcome
   for (i=0; i<=(mojOdds.length/2)-1; i++) {
-    console.log(mojOdds[i], mojOdds[(mojOdds.length/2)+i])
-    if (mojOdds[i].odds > mojOdds[(mojOdds.length/2)+i].odds) {
+
+    if (mojOdds[i].odds < mojOdds[(mojOdds.length/2)+i].odds) {
       mojOdds[i].outcome='win';
       mojOdds[(mojOdds.length/2)+i].outcome='loss'
     } else {
