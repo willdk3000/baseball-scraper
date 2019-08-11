@@ -57,7 +57,7 @@ module.exports = {
                 return knex.raw(
 
                     `WITH daysched AS (
-                    SELECT gameno, team, date_parsed, opponent_initials, home_away 
+                    SELECT gameno, team, date_parsed, opponent_initials, home_away, moj_outcome, moj_odds 
                     FROM schedule 
                     WHERE home_away = 'home' AND date_parsed = '${req.body.date}' 
                     ORDER BY team

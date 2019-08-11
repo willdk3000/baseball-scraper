@@ -17,6 +17,7 @@ class Matchup extends Component {
                                             <img src={game.logo_team} alt="teamlogo"></img> vs <img src={game.logo_opponent} alt="opponentlogo"></img>
                                             <section>
                                                 <p>{game.team} ({((game.team_xrr + game.team_erp) / (game.opponent_xrr + game.opponent_erp)).toFixed(2)}) vs {game.opponent_initials} ({((game.opponent_xrr + game.opponent_erp) / (game.team_xrr + game.team_erp)).toFixed(2)})</p>
+                                                <p> Prévision M-o-J : {game.team} {game.moj_odds} {game.maj_outcome} vs {game.opponent_initials} {game.maj_outcome=='win'? 'loss':'win'} </p>
                                             </section>
                                         </section>
                                     </Link>
