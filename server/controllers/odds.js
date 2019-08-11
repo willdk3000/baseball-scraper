@@ -18,6 +18,24 @@ module.exports = {
       .then(function () {
         return 'done'
       });
+  },
+  
+  setMoj(req, res) {
+
+    let date = new Date();
+    date = date.setDate(date.getDate());
+    let dateFormat = moment(date).format("YYYY-MM-DD");
+
+    return knex.raw(
+      `UPDATE schedule
+        SET moj_odds= '${req.odds}', moj_outcome='${req.outcome}'
+        WHERE date_parsed='${dateFormat}' AND team='${req.team}'
+      `
+    )
+      .then(function () {
+        return 'done'
+      });
   }
+
 
 }
