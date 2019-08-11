@@ -14,11 +14,48 @@ class Matchup extends Component {
                                 <li key={game.gameno} className="list-group-item">
                                     <Link to={{ pathname: `/schedule/${game.gameno}` }}>
                                         <section className="matchup_cards">
-                                            <img src={game.logo_team} alt="teamlogo"></img> vs <img src={game.logo_opponent} alt="opponentlogo"></img>
-                                            <section>
-                                                <p>{game.team} ({((game.team_xrr + game.team_erp) / (game.opponent_xrr + game.opponent_erp)).toFixed(2)}) vs {game.opponent_initials} ({((game.opponent_xrr + game.opponent_erp) / (game.team_xrr + game.team_erp)).toFixed(2)})</p>
-                                                <p> Prévision M-o-J : {game.team} {game.moj_odds} {game.moj_outcome} vs {game.opponent_initials} {game.moj_outcome==='win'? 'loss':'win'} </p>
-                                            </section>
+                                            <div className='row'>
+                                                <div className='col-lg-6'>
+                                                    <img className='hometeamlogo' src={game.team_logo} alt="teamlogo"></img>
+                                                    <p>Home team</p>
+                                                    <table className="table table-bordered table-striped text-center">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>My odds</td>
+                                                                <td style={{
+                                                                        backgroundColor: game.my_outcome === 'win' ? "#E1FFE1" : "#FFE2E2"
+                                                                    }}>{game.my_odds.toFixed(2)}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Moj odds</td>
+                                                                <td style={{
+                                                                        backgroundColor: game.moj_outcome === 'win' ? "#E1FFE1" : "#FFE2E2"
+                                                                    }}>{game.moj_odds}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div className='col-lg-6'>
+                                                    <img className='awayteamlogo' src={game.opponent_logo} alt="opponentlogo"></img>
+                                                    <p>Away team</p>
+                                                    <table className="table table-bordered table-striped text-center">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>My odds</td>
+                                                                <td style={{
+                                                                        backgroundColor: game.opponent_my_outcome === 'win' ? "#E1FFE1" : "#FFE2E2"
+                                                                    }}>{game.opponent_my_odds.toFixed(2)}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Moj odds</td>
+                                                                <td style={{
+                                                                        backgroundColor: game.opponent_moj_outcome === 'win' ? "#E1FFE1" : "#FFE2E2"
+                                                                    }}>{game.opponent_moj_odds}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </section>
                                     </Link>
                                 </li>

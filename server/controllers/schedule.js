@@ -53,7 +53,7 @@ module.exports = {
 
         switch (req.params.action) {
 
-            case ':getDay':
+            case ':getDay-backup':
                 return knex.raw(
 
                     `WITH daysched AS (
@@ -100,6 +100,40 @@ module.exports = {
                     logos.logo as logo_opponent
                     FROM team_opp_ratio_logoT
                     LEFT JOIN logos ON team_opp_ratio_logoT.opponent_initials = logos.team`,
+                )
+                    .then(result => {
+                        res.json(result.rows)
+                    })
+                break;
+
+                case ':getDay':
+                return knex.raw(
+                    `WITH homegames AS (
+                        SELECT 
+                            schedule.*,
+                            logos.logo AS team_logo
+                        FROM schedule
+                        LEFT JOIN logos ON logos.team = schedule.team
+                        WHERE date_parsed='${req.body.date}' AND home_away='home'
+                    ),
+                    awaygames AS (
+                        SELECT 
+                        schedule.*,
+                        logos.logo AS opponent_logo
+                        FROM schedule
+                        LEFT JOIN logos ON logos.team = schedule.team
+                        WHERE date_parsed='${req.body.date}' AND home_away='away'
+                    )
+                    SELECT
+                        homegames.*,
+                        awaygames.opponent_logo,
+                        awaygames.my_odds as opponent_my_odds,
+                        awaygames.my_outcome as opponent_my_outcome,
+                        awaygames.moj_odds as opponent_moj_odds,
+                        awaygames.moj_outcome as opponent_moj_outcome
+                    FROM homegames
+                    LEFT JOIN awaygames
+                    ON awaygames.team = homegames.opponent_initials`,
                 )
                     .then(result => {
                         res.json(result.rows)
