@@ -24,7 +24,7 @@ class Matchup extends Component {
                                                                 <td>My odds</td>
                                                                 <td style={{
                                                                         backgroundColor: game.my_outcome === 'win' ? "#E1FFE1" : "#FFE2E2"
-                                                                    }}>{game.my_odds ? game.myodds.toFixed(2) : 'no odds calculated'}</td>
+                                                                    }}>{game.my_odds ? game.my_odds.toFixed(2) : 'no odds calculated'}</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Moj odds</td>
