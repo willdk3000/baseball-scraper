@@ -53,7 +53,7 @@ module.exports = {
 
         switch (req.params.action) {
 
-            case ':getDay-backup':
+            case ':getDay-odds':
                 return knex.raw(
 
                     `WITH daysched AS (

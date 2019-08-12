@@ -12,7 +12,7 @@ let dateFormat = moment(date).format("YYYY-MM-DD");
 
 async function getDay(calendar_date) {
 
-	const response = await fetch('http://localhost:8000/api/schedule/:getDay', {
+	const response = await fetch('http://localhost:8000/api/schedule/:getDay-odds', {
 		method: 'POST',
 		headers: {
 			'Content-type': 'application/json'
