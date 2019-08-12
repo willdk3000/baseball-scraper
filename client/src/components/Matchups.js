@@ -24,13 +24,13 @@ class Matchup extends Component {
                                                                 <td>My odds</td>
                                                                 <td style={{
                                                                         backgroundColor: game.my_outcome === 'win' ? "#E1FFE1" : "#FFE2E2"
-                                                                    }}>{game.my_odds.toFixed(2)}</td>
+                                                                    }}>{game.my_odds ? game.myodds.toFixed(2) : 'no odds calculated'}</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Moj odds</td>
                                                                 <td style={{
                                                                         backgroundColor: game.moj_outcome === 'win' ? "#E1FFE1" : "#FFE2E2"
-                                                                    }}>{game.moj_odds}</td>
+                                                                    }}>{game.moj_odds ? game.moj_odds : 'no odds calculated'}</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -44,13 +44,13 @@ class Matchup extends Component {
                                                                 <td>My odds</td>
                                                                 <td style={{
                                                                         backgroundColor: game.opponent_my_outcome === 'win' ? "#E1FFE1" : "#FFE2E2"
-                                                                    }}>{game.opponent_my_odds.toFixed(2)}</td>
+                                                                    }}>{game.opponent_my_odds ? game.opponent_my_odds.toFixed(2) : 'no odds calculated'}</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Moj odds</td>
                                                                 <td style={{
                                                                         backgroundColor: game.opponent_moj_outcome === 'win' ? "#E1FFE1" : "#FFE2E2"
-                                                                    }}>{game.opponent_moj_odds}</td>
+                                                                    }}>{game.opponent_moj_odds ? game.opponent_moj_odds : 'no odds calculated'}</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
