@@ -64,12 +64,3 @@ for (i=0; i<=localOdds.length-1; i++) {
 }
 
 setLocalOdds();
-
-
-// { game.team }
-// ({((game.team_xrr + game.team_erp) / (game.opponent_xrr + game.opponent_erp)).toFixed(2)})
-
-// { game.opponent_initials }
-// ({((game.opponent_xrr + game.opponent_erp) / (game.team_xrr + game.team_erp)).toFixed(2)})
-
-// const done_local_odds = controllers.odds.setLocal();

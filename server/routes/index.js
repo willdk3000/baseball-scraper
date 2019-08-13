@@ -1,8 +1,6 @@
 const team_battingController = require('../controllers').team_batting;
 const team_pitchingController = require('../controllers').team_pitching;
 const scheduleController = require('../controllers').schedule;
-const scoresController = require('../controllers').scores;
-const oddsController = require('../controllers').odds;
 
 module.exports = (app) => {
 
