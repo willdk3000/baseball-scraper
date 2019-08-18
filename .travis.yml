@@ -1,0 +1,26 @@
+sudo: required
+services:
+  - docker
+
+# Copy dev code
+before_install:
+  - docker build -t willdk3000/react-test -f ./client/Dockerfile.dev ./client
+
+# Test dev code
+script:
+  - docker run -e CI=true willdk3000/react-test npm test
+
+after_success:
+  - docker build -t willdk3000/complex-client ./client
+  - docker build -t willdk3000/complex-nginx ./nginx
+  - docker build -t willdk3000/complex-server ./server
+  - docker build -t willdk3000/complex-worker ./worker
+
+  #Log in to docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+  #Take those images and push them to dockerhub
+  - docker push willdk3000/complex-client
+  - docker push willdk3000/complex-nginx
+  - docker push willdk3000/complex-server
+  - docker push willdk3000/complex-worker

@@ -6,60 +6,60 @@ const localOdds = [];
 
 async function setLocalOdds() {
 
-let date = new Date();
-date = date.setDate(date.getDate());
-let dateFormat = moment(date).format("YYYY-MM-DD");
+	let date = new Date();
+	date = date.setDate(date.getDate());
+	let dateFormat = moment(date).format("YYYY-MM-DD");
 
-async function getDay(calendar_date) {
+	async function getDay(calendar_date) {
 
-	const response = await fetch('http://localhost:8000/api/schedule/:getDay-odds', {
-		method: 'POST',
-		headers: {
-			'Content-type': 'application/json'
-		},
-		body: JSON.stringify({
-			'date': calendar_date
-		})
-	});
+		const response = await fetch('http://localhost:8000/schedule/:getDay-odds', {
+			method: 'POST',
+			headers: {
+				'Content-type': 'application/json'
+			},
+			body: JSON.stringify({
+				'date': calendar_date
+			})
+		});
 
-	return response.json({ 'games': response })
+		return response.json({ 'games': response })
 
-}
-
-let games = await getDay(dateFormat);
-
-games.forEach((game)=>{
-
-	let odds_outcome_team='';
-	let odds_outcome_opponent='';
-	let odds_team = (game.team_erp + game.team_xrr)/(game.opponent_erp + game.opponent_xrr);
-	let odds_opponent = (game.opponent_erp + game.opponent_xrr)/(game.team_erp + game.team_xrr);
-
-	if (odds_team>odds_opponent) {
-		odds_outcome_team = 'win';
-		odds_outcome_opponent = 'loss';
-	} else {
-		odds_outcome_team = 'loss';
-		odds_outcome_opponent = 'win';
 	}
 
-	localOdds.push({
-		'team': game.team,
-		'odds': odds_team,
-		'outcome': odds_outcome_team
-	},
-	{
-		'team': game.opponent_initials,
-		'odds': odds_opponent,
-		'outcome': odds_outcome_opponent
-	})
-	
-})
+	let games = await getDay(dateFormat);
 
-for (i=0; i<=localOdds.length-1; i++) {
-	const done_odds = await controllers.odds.setLocal(localOdds[i]);
-	console.log(localOdds[i]);
-}
+	games.forEach((game) => {
+
+		let odds_outcome_team = '';
+		let odds_outcome_opponent = '';
+		let odds_team = (game.team_erp + game.team_xrr) / (game.opponent_erp + game.opponent_xrr);
+		let odds_opponent = (game.opponent_erp + game.opponent_xrr) / (game.team_erp + game.team_xrr);
+
+		if (odds_team > odds_opponent) {
+			odds_outcome_team = 'win';
+			odds_outcome_opponent = 'loss';
+		} else {
+			odds_outcome_team = 'loss';
+			odds_outcome_opponent = 'win';
+		}
+
+		localOdds.push({
+			'team': game.team,
+			'odds': odds_team,
+			'outcome': odds_outcome_team
+		},
+			{
+				'team': game.opponent_initials,
+				'odds': odds_opponent,
+				'outcome': odds_outcome_opponent
+			})
+
+	})
+
+	for (i = 0; i <= localOdds.length - 1; i++) {
+		const done_odds = await controllers.odds.setLocal(localOdds[i]);
+		console.log(localOdds[i]);
+	}
 
 }
 
